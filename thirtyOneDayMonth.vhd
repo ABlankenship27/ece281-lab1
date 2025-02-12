@@ -76,11 +76,11 @@ begin
 	w_sel(1) <= i_A;
 	w_sel(2) <= i_B;
 	--enter your logic here to implement the mux.  See VHDL reference sheet for MUX syntax.	
-	with w_sel select
-	o_Y <= '1' when "001",
-	       '1' when "010",
-	       '1' when "110",
-	       '1' when "101",
-	       '0' when others;
+	
+	o_Y <= '1' when (w_sel="001") else
+	       '1' when (w_sel="010") else
+	       '1' when (w_sel="110") else
+	       '1' when (w_sel="101") else
+	       '0';
 	---------------------------------------------------------------	
 end thirtyOneDayMonth_arch;
